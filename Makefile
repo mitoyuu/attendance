@@ -29,4 +29,4 @@ cache:
 	docker-compose exec php php artisan config:cache
 
 stop:
-docker-compose stop
+	docker-compose stop
