@@ -1,0 +1,32 @@
+.mail_verify--button {
+    display: inline-block;
+
+    width: 250px;
+
+    padding: 12px;
+
+    background: #aca8a8;
+
+    color: #050505;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+}
+
+.mail_resend--link {
+
+    background: none;
+
+    border: none;
+
+    color: blue;
+
+    text-decoration: underline;
+
+    cursor: pointer;
+
+    padding: 0;
+}

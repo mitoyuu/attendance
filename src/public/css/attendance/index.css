@@ -1,0 +1,24 @@
+/* 入力欄全体の設定 */
+.calendar-only {
+    width: 30px;
+    /* アイコンが入る程度の幅に制限 */
+    height: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+}
+
+/* 「年/月/日」のテキスト部分を非表示にする (Chrome, Edge用) */
+.calendar-only::-webkit-datetime-edit {
+    display: none;
+}
+
+/* カレンダーアイコン自体の位置や大きさを微調整 */
+.calendar-only::-webkit-calendar-picker-indicator {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
