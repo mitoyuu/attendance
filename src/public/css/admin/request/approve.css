@@ -1,0 +1,105 @@
+.attendance-approve__container {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* 白いカード枠 */
+.form__card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    /* 角丸を綺麗に保つ */
+    margin-bottom: 25px;
+}
+
+/* 各フォーム行の共通スタイル */
+.form__group {
+    display: flex;
+    align-items: center;
+    padding: 25px 40px;
+    border-bottom: 1px solid #eef0f4;
+}
+
+/* 最後の行のボーダーを消す */
+.form__group.no-border {
+    border-bottom: none;
+}
+
+/* 左側のラベル（名前、日付、出勤・退勤など） */
+.entry__name {
+    width: 200px;
+    font-size: 16px;
+    color: #666666;
+    font-weight: 500;
+}
+
+/* 右側のデータ値（西 伶奈、2023年6月1日など） */
+.entry__value {
+    font-size: 16px;
+    color: #000000;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    /* 「〜」との間隔 */
+}
+
+/* 日付などの特記事項の文字間隔 */
+.entry__value span {
+    display: inline-block;
+}
+
+/* 「〜」の記号スタイル */
+.time-separator {
+    font-weight: normal;
+    color: #000000;
+    margin: 0 10px;
+}
+
+/* 未承認時の入力用インプット（もし表示された場合用） */
+.input {
+    width: 120px;
+    padding: 8px 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* ボタンを右下に寄せるコンテナ */
+.button__container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+/* 承認ボタン（黒背景・白文字） */
+.btn-submit {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 45px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: #333333;
+}
+
+/* 承認済みボタン（薄いグレー） */
+.approve-btn {
+    background-color: #8d8d8d;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 12px 45px;
+    text-align: center;
+    user-select: none;
+}

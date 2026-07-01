@@ -1,0 +1,87 @@
+/* 全体背景 */
+.request {
+    min-height: 100vh;
+    background: #f1f1f1;
+    padding: 60px 0;
+}
+
+/* タイトル */
+.page__title {
+    width: 900px;
+    margin: 0 auto 30px;
+    font-size: 28px;
+    border-left: 6px solid black;
+    padding-left: 15px;
+}
+
+.request__container {
+    width: 900px;
+    margin: 0 auto;
+}
+
+/* タブ */
+.border {
+    margin-top: 50px;
+}
+
+.border__list {
+    border-bottom: 1px solid #5F5F5F;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.border__list li:first-child {
+    padding-left: 50px;
+}
+
+.border__list li {
+    padding: 10px 40px;
+}
+
+/* 共通のリンクスタイル（通常は細い） */
+.border__list a {
+    color: black;
+    text-decoration: none;
+    font-weight: normal;
+    letter-spacing: 0.2em;
+}
+
+/* 選択されているタブだけ太字 */
+.border__list a.is-active {
+    font-weight: bold;
+}
+
+/* テーブル */
+.request__table {
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+/* 横グレーライン */
+.request__table th,
+.request__table td {
+    padding: 18px;
+    text-align: center;
+    border-bottom: 2px solid #e5e5e5;
+    color: #777;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+}
+
+/* ★修正：thead（見出し行）の中にある th の下線だけを上書きして太くする */
+.request__table thead th {
+    border-bottom: 4px solid #e5e5e5;
+}
+
+/* 詳細リンク */
+.request__table a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}

@@ -1,0 +1,96 @@
+/* 全体背景 */
+.attendance {
+    background: #f1f1f1;
+
+    min-height: 100vh;
+
+    padding: 60px 0;
+}
+
+/* タイトル */
+.page__title {
+    width: 900px;
+
+    margin: 0 auto 30px;
+
+    font-size: 28px;
+
+    border-left: 6px solid black;
+
+    padding-left: 15px;
+}
+
+/* 白いカード */
+.attendance__card {
+    width: 900px;
+
+    margin: 0 auto;
+
+    background: white;
+
+    border-radius: 8px;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+}
+
+/* 月切替 */
+.attendance__month {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+/* テーブル */
+.attendance__table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+/* 横グレーライン */
+.attendance__table th,
+.attendance__table td {
+    padding: 18px;
+
+    text-align: center;
+
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.attendance__table thead {
+    border-top: 1px solid #e5e5e5;
+}
+
+.attendance__table th {
+    color: #777;
+
+    font-weight: 600;
+}
+
+.attendance__table td {
+    color: #555;
+}
+
+/* ★修正：thead（見出し行）の中にある th の下線だけを上書きして太くする */
+.attendance__table thead th {
+    border-bottom: 4px solid #e5e5e5;
+}
+
+/* 詳細リンク */
+.attendance__table a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.attendance__date a {
+    color: rgb(126, 125, 125);
+    text-decoration: none;
+    font-weight: bold;
+}

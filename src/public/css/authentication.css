@@ -1,0 +1,11 @@
+.link {
+    display: block;
+    margin-top: 30px;
+    text-align: center;
+    color: #0073CC;
+    text-decoration: none;
+}
+
+body {
+    background-color: #ffffff;
+}

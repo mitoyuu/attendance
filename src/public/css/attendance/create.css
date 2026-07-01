@@ -1,0 +1,129 @@
+/* 勤怠打刻画面 */
+
+/* 全体の中央寄せと余白 */
+/* .attendance {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 60px 0;
+    text-align: center;
+} */
+.attendance {
+    box-sizing: border-box;
+    margin: 0;
+    /* 💡 画面の高さ（ヘッダーを引いた残り全体）を目一杯使う設定 */
+    min-height: calc(100vh - 60px);
+     /* 100vh(画面全体) から ヘッダーの高さ(60px)を引く */
+     /* 💡 Flexboxを使って、中身を縦並びにしつつ上下左右中央に集める */
+    display: flex;
+    flex-direction: column;
+    /* 中身（ステータス、日付、時間、ボタン）を縦に並べる */
+    justify-content: center;
+    /* 縦方向の中央寄せ */
+    align-items: center;
+     /* 横方向の中央寄せ */
+}
+
+/* 「出勤中」などのステータス */
+.status {
+    display: inline-block;
+    /* 文字の幅に合わせる */
+    background-color: #cccccc;
+    /* 薄いグレーの背景 */
+    color: #747373;
+    padding: 6px 16px;
+    border-radius: 20px;
+    /* 丸みをつける */
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    /* margin-bottom: 30px; */
+}
+
+/* 日付 (2026年6月30日) */
+.attendance h2 {
+    font-size: 32px;
+    font-weight: 500;
+    margin: 0 0 20px 0;
+    color: #000000;
+}
+
+/* 時刻 (10:51) */
+.attendance h1 {
+    font-size: 72px;
+    font-weight: bold;
+    margin: 0 0 40px 0;
+    color: #000000;
+    /* 数字用：角張った等幅フォントを指定しておく */
+        /* font-family: 'Consolas', 'Courier New', monospace;
+        font-variant-numeric: tabular-nums; */
+        /* 数字の幅を統一 */
+}
+/* 全体（数字）の設定 */
+.clock-display {
+    font-variant-numeric: tabular-nums;
+}
+/* コロンだけの個別設定 */
+.clock-colon {
+    position: relative;
+    top: -6px;
+    /* 四角から丸になると位置が変わるのでここで上下を微調整 */
+    font-family: 'Trebuchet MS', 'Arial', 'Meiryo', sans-serif;}
+
+/* 3. h1タグに適用 */
+.clock-display {
+    font-variant-numeric: tabular-nums;
+    /* 数字の幅を揃えてガタつき防止 */
+}
+
+/* ボタンエリア */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    /* ボタン同士の間隔 */
+}
+
+/* ボタン共通のスタイル */
+.buttons button,
+.buttons p {
+    width: 200px;
+    height: 60px;
+    font-size: 23px;
+    font-weight: bold;
+    border-radius: 15px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    /* ほんのり影をつける */
+    transition: all 0.3s ease;
+    letter-spacing: 4px;
+}
+
+/* 黒ボタン（出勤・退勤） */
+.buttons .btn-black {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* 白ボタン（休憩入・休憩戻） */
+.buttons .btn-white {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #ddd;
+    /* 画面と同化しないように薄い線を引く */
+}
+
+/* ボタンホバー時のエフェクト */
+/* .buttons button:hover {
+    opacity: 0.8;
+    transform: translateY(-2px); */
+    /* 少し浮き上がらせる */
+/* } */
+.buttons .message {
+    width: 300px;
+    height: 60px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 15px;
+        display: flex;
+            justify-content: center;
+            align-items: center;
+}

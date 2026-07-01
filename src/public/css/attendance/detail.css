@@ -1,0 +1,110 @@
+.request {
+    min-height: 100vh;
+    background: #f1f1f1;
+    padding: 50px 0;
+}
+
+.attendance__detail {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.page__title {
+    margin-bottom: 30px;
+}
+
+.detail__card {
+    background: white;
+    border-radius: 10px;
+    /* overflow: hidden; */
+}
+
+.form__group {
+    display: grid;
+    grid-template-columns:220px 1fr;
+    align-items: center;
+    min-height: 85px;
+    padding: 0 60px;
+    border-bottom:1px solid #e5e5e5;
+}
+
+.entry__name {
+    margin: 0;
+    color: #666;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.detail__value {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: 20px;
+}
+
+.date-space {
+    margin-left: 90px;
+}
+
+.time-row,
+.break-row {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.time-input {
+    width: 120px;
+    height: 42px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.memo-input {
+    width: 355px;
+    height: 70px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.btn-submit {
+    display: block;
+    width: 130px;
+    height: 50px;
+    margin:40px 0 0 auto;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 22px;
+    letter-spacing: 3px;
+    font-weight: bold;
+
+}
+
+.form__error {
+    color: #ff333f;
+    margin-top: 8px;
+}
+
+/* 承認待ち */
+.error-message {
+    color: #ff333f;
+    text-align: right;
+    margin-top: 20px;
+}
+
+/* 承認済みだけ赤文字 */
+.message {
+    color: #ff333f;
+    text-align: right;
+    margin-top: 20px;
+}

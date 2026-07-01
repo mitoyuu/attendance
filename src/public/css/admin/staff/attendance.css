@@ -1,0 +1,122 @@
+/* 全体背景 */
+.attendance {
+    background: #f1f1f1;
+
+    min-height: 100vh;
+
+    padding: 60px 0;
+}
+
+/* タイトル */
+.page__title {
+    width: 900px;
+    margin: 0 auto 30px;
+    font-size: 28px;
+    border-left: 6px solid black;
+    padding-left: 20px;
+}
+
+/* 白いカード */
+.attendance__card {
+    width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+}
+
+/* 月切替 */
+.attendance__month {
+    width: 900px;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    background: white;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-weight: bold;
+    padding: 20px 10px;
+}
+
+/* テーブル */
+.attendance__table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* 横グレーライン */
+.attendance__table th,
+.attendance__table td {
+    padding: 18px;
+
+    text-align: center;
+
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.attendance__table thead {
+    border-top: 1px solid #e5e5e5;
+}
+
+.attendance__table th {
+    color: #777;
+    font-weight: 600;
+}
+
+.attendance__table td {
+    color: #555;
+}
+
+/* 詳細リンク */
+.attendance__month a {
+    color: #555;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* 年月部分 */
+.attendance__table a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* CSV */
+.csv-export-wrap {
+    width: 900px;
+
+    margin: 40px auto 0;
+
+    display: flex;
+
+    justify-content: flex-end;
+}
+
+.csv-btn {
+    width: 180px;
+    height: 50px;
+text-decoration: none;}
+
+/* 年月 */
+.month-text {
+    font-size: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+/* カレンダー中央 */
+.calendar-wrapper {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}

@@ -1,32 +1,132 @@
-.mail_verify--button {
-    display: inline-block;
+/* 全体 */
+.mail_notice--div {
+    min-height: calc(100vh - 80px);
+    /* ヘッダー分調整 */
+    background: #f1f1f1;
 
-    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    padding: 12px;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
 
-    background: #aca8a8;
+/* 中央コンテンツ */
+.mail_notice--content {
+    width: 100%;
+    max-width: 700px;
 
-    color: #050505;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     text-align: center;
+}
+
+/* 認証案内 */
+.alert_resend--p {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.6;
+
+    margin-bottom: 80px;
+}
+
+/* 再送成功メッセージ */
+.notice_resend--p {
+    color: #2f855a;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    margin-bottom: 40px;
+}
+
+/* 認証ボタン */
+.mail_verify--button {
+    display: inline-flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 260px;
+    height: 80px;
+
+    background: #d9d9d9;
+
+    border: 1px solid #333;
+    border-radius: 8px;
+
+    color: #000;
 
     text-decoration: none;
 
-    border-radius: 10px;
+    font-size: 22px;
+    font-weight: 700;
+
+    margin-bottom: 50px;
+
+    transition: 0.2s;
 }
 
+.mail_verify--button:hover {
+    opacity: 0.85;
+}
+
+/* 再送フォーム */
+.mail_resend--form {
+    margin-top: 10px;
+}
+
+/* 再送リンク */
 .mail_resend--link {
-
-    background: none;
-
     border: none;
+    background: transparent;
 
-    color: blue;
+    color: #0073ff;
 
-    text-decoration: underline;
+    font-size: 22px;
 
     cursor: pointer;
+}
 
-    padding: 0;
+.mail_resend--link:hover {
+    text-decoration: underline;
+}
+
+/* タブレット */
+@media screen and (max-width: 850px) {
+    .alert_resend--p {
+        font-size: 22px;
+    }
+
+    .mail_verify--button {
+        width: 220px;
+        height: 70px;
+
+        font-size: 26px;
+    }
+
+    .mail_resend--link {
+        font-size: 20px;
+    }
+}
+
+/* スマホ */
+@media screen and (max-width: 480px) {
+    .alert_resend--p {
+        font-size: 18px;
+    }
+
+    .mail_verify--button {
+        width: 200px;
+        height: 60px;
+
+        font-size: 22px;
+    }
+
+    .mail_resend--link {
+        font-size: 16px;
+    }
 }

@@ -1,9 +1,10 @@
-/* * {
+* {
     box-sizing: border-box;
 }
 
 body {
     width: 100vw;
+    background-color: #efeeee;
 }
 
 img {
@@ -11,7 +12,7 @@ img {
 }
 
 button {
-    background-color: transparent;
+    background-color: transparent; /*透明化・リセットし、各画面のCSSで自由にデザインする */
     border: none;
     cursor: pointer;
     outline: none;
@@ -44,7 +45,6 @@ header {
     vertical-align: middle;
 }
 
-
 .header__nav {
     display: flex;
 }
@@ -56,6 +56,11 @@ header {
 
 .header__nav li {
     margin-right: 30px;
+}
+
+.header__nav li a {
+    color: #fff;
+    text-decoration: none;
 }
 
 .header__nav li:hover {
@@ -91,7 +96,7 @@ header {
 .btn {
     display: flex;
     align-items: center;
-    background-color:black;
+    background-color: #000000;
     border-radius: 5px;
     color: #fff;
     font-weight: bold;
@@ -111,24 +116,6 @@ header {
     font-size: 20px;
 }
 
-.btn2 {
-    border: 2px solid #FF5555;
-    border-radius: 10px;
-    color: #FF5555;
-    padding: 15px;
-    font-weight: bold;
-    text-align: center;
-    align-items: center;
-}
-
-.btn2:hover {
-    cursor: pointer;
-}
-
-.btn2--input {
-    display: none;
-}
-
 .center {
     width: 680px;
     margin: 0 auto;
@@ -139,6 +126,10 @@ header {
     font-size: 30px;
     text-align: center;
     margin-bottom: 60px;
+    margin-left: 15px;
+    text-align: left;
+    padding-left: 20px; /* 縦線と文字の間に隙間をあける */
+    border-left: 6px solid #000; /* 左側に黒い太線（縦線）をつける */
 }
 
 .entry__name {
@@ -168,4 +159,66 @@ header {
     .header__logo {
         width: 25vw;
     }
-} */
+}
+
+
+
+.calendar-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.calendar-trigger {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    width: 24px;
+    /* 💡 ここでアイコンのサイズを自由に固定（好きなサイズに調整してください） */
+    height: 24px;
+}
+
+/* 💡 imgタグが画面いっぱいにデカくならないように制御します */
+.icon-monthly {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.calendar-only {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.calendar-only::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* 共通テーブル部品 */
+
+.table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 18px;
+
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.table th {
+    color: #777;
+}
