@@ -1,87 +1,83 @@
-/* 全体背景 */
+/* 画面全体のレイアウト調整 */
 .attendance {
-    background: #f1f1f1;
-
-    min-height: 100vh;
-
-    padding: 60px 0;
+    max-width: 940px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
-/* タイトル */
-.page__title {
-    width: 900px;
-
-    margin: 0 auto 30px;
-
-    font-size: 28px;
-
-    border-left: 6px solid black;
-
-    padding-left: 15px;
+.attendance .page__title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    margin-left: 0;
 }
 
-/* 白いカード */
-.attendance__card {
-    width: 900px;
-
-    margin: 0 auto;
-
-    background: white;
-
+/* 日付切替専用の白いカード */
+.attendance__date-card {
+    background: #ffffff;
     border-radius: 8px;
-
-    padding: 30px;
-
-    box-sizing: border-box;
-}
-
-/* 月切替 */
-.attendance__date {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    padding: 15px 30px;
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
-/* テーブル */
-.attendance__table {
-    width: 100%;
-
-    border-collapse: collapse;
+/* 「前日」「翌日」のリンク */
+.date-nav {
+    color: #666666;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.2s ease;
 }
 
-/* 横グレーライン */
-.attendance__table th,
-.attendance__table td {
-    padding: 18px;
-
-    text-align: center;
-
-    border-bottom: 1px solid #e5e5e5;
+.date-nav:hover {
+    color: #000000;
 }
 
-.attendance__table thead {
-    border-top: 1px solid #e5e5e5;
+/* 中央の日付テキストのスタイル */
+.month-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+    letter-spacing: 0.5px;
 }
 
+/* テーブルを包む白いカード */
+.attendance__card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    padding: 10px 0;
+    overflow: hidden;
+}
+
+/* 共通.tableの上書き・拡張 */
 .attendance__table th {
-    color: #777;
-
-    font-weight: 600;
+    color: #a0a0a0;
+    font-weight: bold;
+    border-bottom: 1px solid #efefef;
 }
 
 .attendance__table td {
-    color: #555;
+    color: #333333;
+    font-weight: 500;
+    border-bottom: 1px solid #efefef;
+}
+
+.attendance__table tr:last-child td {
+    border-bottom: none;
 }
 
 /* 詳細リンク */
-.attendance__table a {
-    color: black;
-
+.cell-detail a {
+    color: #000000;
     text-decoration: none;
-
     font-weight: bold;
+}
+
+.cell-detail a:hover {
+    opacity: 0.6;
 }

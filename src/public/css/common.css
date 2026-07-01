@@ -174,11 +174,9 @@ header {
     cursor: pointer;
     display: inline-block;
     width: 24px;
-    /* 💡 ここでアイコンのサイズを自由に固定（好きなサイズに調整してください） */
     height: 24px;
 }
 
-/* 💡 imgタグが画面いっぱいにデカくならないように制御します */
 .icon-monthly {
     width: 100%;
     height: 100%;

@@ -1,96 +1,61 @@
-/* 全体背景 */
+/* 画面全体のレイアウト調整 */
 .attendance {
-    background: #f1f1f1;
-
-    min-height: 100vh;
-
-    padding: 60px 0;
+    max-width: 940px;
+    /* 画像のサイズ感に合わせる */
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
-/* タイトル */
-.page__title {
-    width: 900px;
-
-    margin: 0 auto 30px;
-
-    font-size: 28px;
-
-    border-left: 6px solid black;
-
-    padding-left: 15px;
+/* 共通のタイトルスタイルをこの画面用に微調整 */
+.attendance .page__title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 35px;
+    margin-left: 0;
 }
 
-/* 白いカード */
+/* テーブルを包む白いカード */
 .attendance__card {
-    width: 900px;
-
-    margin: 0 auto;
-
-    background: white;
-
+    background: #ffffff;
     border-radius: 8px;
-
-    padding: 30px;
-
-    box-sizing: border-box;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    padding: 10px 0;
+    overflow: hidden;
 }
 
-/* 月切替 */
-.attendance__month {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    margin-bottom: 20px;
+/* 共通.tableの上書き・拡張 */
+.staff__table th {
+    color: #a0a0a0;
+    font-weight: bold;
+    border-bottom: 1px solid #efefef;
 }
 
-/* テーブル */
-.attendance__table {
-    width: 100%;
-
-    border-collapse: collapse;
+.staff__table td {
+    font-weight: 500;
+    font-weight: bold;
+    border-bottom: 1px solid #efefef;
+    margin: 0 30px;
 }
 
-/* 横グレーライン */
-.attendance__table th,
-.attendance__table td {
-    padding: 18px;
-
-    text-align: center;
-
-    border-bottom: 1px solid #e5e5e5;
+/* メールアドレス列の微調整 */
+.staff__table td:nth-child(2) {
+    color: #666666;
+    letter-spacing: 0.3px;
 }
 
-.attendance__table thead {
-    border-top: 1px solid #e5e5e5;
-}
-
-.attendance__table th {
-    color: #777;
-
-    font-weight: 600;
-}
-
-.attendance__table td {
-    color: #555;
-}
-
-/* ★修正：thead（見出し行）の中にある th の下線だけを上書きして太くする */
-.attendance__table thead th {
-    border-bottom: 4px solid #e5e5e5;
+/* 最後の行の下線を消して角丸に馴染ませる */
+.staff__table tr:last-child td {
+    border-bottom: none;
 }
 
 /* 詳細リンク */
-.attendance__table a {
-    color: black;
+.staff__table a {
+    color: #000000;
     text-decoration: none;
     font-weight: bold;
+    transition: opacity 0.2s;
 }
 
-.attendance__date a {
-    color: rgb(126, 125, 125);
-    text-decoration: none;
-    font-weight: bold;
+.staff__table a:hover {
+    opacity: 0.6;
 }

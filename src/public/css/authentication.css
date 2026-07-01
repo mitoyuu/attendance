@@ -9,3 +9,22 @@
 body {
     background-color: #ffffff;
 }
+
+/* ログイン・会員登録画面のタイトル共通スタイル（縦ラインなし・中央寄せ） */
+.authenticate.center .page__title {
+    border-left: none !important;
+    padding-left: 0 !important;
+    text-align: center !important;
+    margin-left: 0 !important;
+    font-size: 26px;
+    /* お好みに合わせて調整してください */
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+/* 入力枠（input）の線が消えている場合の保険と見た目の微調整 */
+.authenticate.center .input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px 15px;
+}
