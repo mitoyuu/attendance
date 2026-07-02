@@ -29,7 +29,7 @@
     color: #666666;
     text-decoration: none;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: bold;
     transition: color 0.2s ease;
 }
 
@@ -55,16 +55,32 @@
 }
 
 /* 共通.tableの上書き・拡張 */
+.attendance__table th,
+.attendance__table td {
+    text-align: center;
+    padding: 20px 15px;
+}
+
+/* 名前列だけ左寄りに見えるようにするため調整 */
+.attendance__table th:first-child,
+.attendance__table td:first-child {
+    text-align: left;
+    padding-left: 40px;
+}
+
 .attendance__table th {
     color: #a0a0a0;
+    /* 薄めのグレー */
     font-weight: bold;
     border-bottom: 1px solid #efefef;
+    font-size: 15px;
 }
 
 .attendance__table td {
-    color: #333333;
-    font-weight: 500;
+    color: #666666;
+    font-weight: bold;
     border-bottom: 1px solid #efefef;
+    font-size: 15px;
 }
 
 .attendance__table tr:last-child td {

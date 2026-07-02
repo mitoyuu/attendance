@@ -17,40 +17,39 @@
 <div class="attendance">
 
     <h1 class="page__title">{{ \Carbon\Carbon::parse($date)->format('Y年n月j日') }}の勤怠</h1>
+
+        <div class="attendance__date-card">
+            <a href="?date={{ \Carbon\Carbon::parse($date)->subDay()->format('Y-m-d') }}" class="date-nav">
+                ← 前日
+            </a>
+            <span class="calendar-wrapper">
+                <label class="calendar-trigger">
+                    <img src="{{ asset('img/カレンダーアイコン8.png') }}" alt="カレンダー" class="icon-monthly">
+                        <input type="date" class="calendar-only" value="{{ $date }}">
+                </label>
+            <span class="month-text">
+                {{ \Carbon\Carbon::parse($date)->format('Y/m/d') }}
+            </span>
+            </span>
+                <a href="?date={{ \Carbon\Carbon::parse($date)->addDay()->format('Y-m-d') }}" class="date-nav">
+                    翌日 →
+                </a>
+        </div>
+
     <div class="attendance__card">
-
-        <div class="attendance__date">
-        <a href="?date={{ \Carbon\Carbon::parse($date)->subDay()->format('Y-m-d') }}">
-            ← 前日
-        </a>
-    <span class="calendar-wrapper">
-        <label class="calendar-trigger">
-            <img src="{{ asset('img/カレンダーアイコン8.png') }}" alt="カレンダー" class="icon-monthly">
-                    <input type="date" class="calendar-only" value="{{ $date }}">
-        </label>
-        <span class="month-text">
-            {{ \Carbon\Carbon::parse($date)->format('Y/m/d') }}
-        </span>
-    </span>
-        <a href="?date={{ \Carbon\Carbon::parse($date)->addDay()->format('Y-m-d') }}">
-            翌日 →
-        </a>
-    </div>
-
-
-    <table class="table attendance__table">
-        <thead>
-            <tr>
-                <th>名前</th>
-                <th>出勤</th>
-                <th>退勤</th>
-                <th>休憩</th>
-                <th>合計</th>
-                <th>詳細</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($attendances as $attendance)
+        <table class="table attendance__table">
+            <thead>
+                <tr>
+                    <th>名前</th>
+                    <th>出勤</th>
+                    <th>退勤</th>
+                    <th>休憩</th>
+                    <th>合計</th>
+                    <th>詳細</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($attendances as $attendance)
             <tr>
                 <!-- 名前 -->
                 <td>{{ $attendance->user->name }}</td>
@@ -63,14 +62,15 @@
                 <!-- 合計 -->
                 <td>{{ $attendance ? $attendance->work_total_format : '' }}</td>
                 <!-- 詳細 -->
-                <td>@if($attendance)
+                <td class="cell-detail">
+                    @if($attendance)
                     <a href="/admin/attendance/{{ $attendance->id }}">詳細</a>
                     @endif
                 </td>
             </tr>
-            @endforeach
-        </tbody>
-    </table>
+                @endforeach
+            </tbody>
+        </table>
     </div>
 </div>
 @endsection
