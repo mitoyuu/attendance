@@ -7,9 +7,6 @@
 @section('content')
 @include('components.header')
 <div class="mail_notice--div">
-    <!-- <div class="mail_notice--header">
-        <p class="notice_header--p">メール認証はお済みですか？</p>
-    </div> -->
 
     <div class="mail_notice--content">
 
@@ -25,7 +22,7 @@
         <a
             href="https://mailtrap.io/sandboxes"
             target="_blank"
-            class="mail_verify--button">認証はこちらから</button>
+            class="mail_verify--button">認証はこちらから
         </a>
         <form class="mail_resend--form" method="POST" action="{{ route('verification.send') }}">
             @csrf
@@ -35,10 +32,5 @@
             </button>
         </form>
     </div>
-    <!-- @if (session('resent'))
-        <p class="notice_resend--p" role="alert">
-            新規認証メールを再送信しました！
-        </p>
-        @endif -->
 </div>
 @endsection

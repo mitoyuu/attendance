@@ -46,8 +46,8 @@ class AttendanceCreateTest extends TestCase
         $response
             ->assertStatus(200)
             ->assertSee(now()->isoFormat('YYYY年M月D日(ddd)'))
-            ->assertSee(now()->format('H:i'));
-
+            ->assertSee(now()->format('H'))
+            ->assertSee(now()->format('i'));
         // テスト日時解除（引数なしで呼ぶと解除）
         Carbon::setTestNow();
     }

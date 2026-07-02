@@ -3,7 +3,6 @@
 <!-- タイトル -->
 @section('title','ログイン')
 
-<!-- css読み込み -->
 @section('css')
 <link rel="stylesheet" href="{{ asset('/css/authentication.css')  }}">
 @endsection

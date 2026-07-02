@@ -4,9 +4,8 @@
 <!-- タイトル -->
 @section('title','会員登録')
 
-<!-- css読み込み -->
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/register.css')  }}">
+<link rel="stylesheet" href="{{ asset('css/authentication.css')  }}">
 @endsection
 
 <!-- 本体 -->
@@ -37,7 +36,7 @@
         {{ $message }}
         @enderror
     </div>
-    <label for="password_confirm" class="entry__name">確認用パスワード</label>
+    <label for="password_confirm" class="entry__name">パスワード確認</label>
     <input name="password_confirmation" id="password_confirm" type="password" class="input">
     <button class="btn btn--big">登録する</button>
     <a href="/login" class="link">ログインはこちら</a>

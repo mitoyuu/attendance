@@ -1,30 +1,44 @@
 @extends('layouts.default')
 
+<!-- タイトル -->
+@section('title','勤怠詳細')
+
 @section('css')
-{{-- 勤怠詳細のCSS --}}
-    <link rel="stylesheet" href="{{ asset('/css/attendance/detail.css') }}">
+<link rel="stylesheet" href="{{ asset('/css/attendance/detail.css') }}">
 @endsection
 
+<!-- 本体 -->
 @section('content')
-{{-- 本体 --}}
     @include('components.header')
+    <div class="request">
+
     <form action="/attendance/detail/{{ $attendance->id }}" method="post" class="attendance__detail">
         @csrf
         <h1 class="page__title">勤怠詳細</h1>
+        <div class="detail__card">
+
         <div class="form__group">
             <label for="name" class="entry__name">名前</label>
-            <span>{{ Auth::user()->name }}</span>
+                <div class="detail__value">
+                    {{ Auth::user()->name }}
+                </div>
         </div>
         <div class="form__group">
             <label for="work_date" class="entry__name">日付</label>
             {{-- 表示用 --}}
-            <span>{{ \Carbon\Carbon::parse($attendance->work_date)->format('Y年n月j日') }}</span>
+                <div class="detail__value">
+                    {{ \Carbon\Carbon::parse($attendance->work_date)->format('Y年') }}
+                    <span class="date-space">
+                        {{ \Carbon\Carbon::parse($attendance->work_date)->format('n月j日') }}
+                    </span>
+                </div>
             {{-- 送信用（隠す） --}}
             <input type="hidden" name="work_date"
                 value="{{ \Carbon\Carbon::parse($attendance->work_date)->format('Y-m-d') }}">
         </div>
         <div class="form__group">
             <label for="requested_clock" class="entry__name">出勤・退勤</label>
+            <div class="time-row">
             @if ($stampCorrectionRequest)
                 <span>
                     {{ $stampCorrectionRequest->requested_clock_in ? \Carbon\Carbon::parse($stampCorrectionRequest->requested_clock_in)->format('H:i') : '' }}
@@ -34,10 +48,10 @@
                     {{ $stampCorrectionRequest->requested_clock_out ? \Carbon\Carbon::parse($stampCorrectionRequest->requested_clock_out)->format('H:i') : '' }}
                 </span>
             @else
-                <input name="requested_clock_in" id="requested_clock" type="text" class="input"
+                <input name="requested_clock_in" id="requested_clock" type="text" class="time-input"
                     value="{{ old('requested_clock_in', $attendance->clock_in ? \Carbon\Carbon::parse($attendance->clock_in)->format('H:i') : '') }}">
                 〜
-                <input name="requested_clock_out" id="requested_clock" type="text" class="input"
+                <input name="requested_clock_out" id="requested_clock" type="text" class="time-input"
                     value="{{ old('requested_clock_out', $attendance->clock_out ? \Carbon\Carbon::parse($attendance->clock_out)->format('H:i') : '') }}">
                 <div class="form__error">
                     @error('requested_clock_out')
@@ -45,6 +59,7 @@
                     @enderror
                 </div>
             @endif
+            </div>
         </div>
         {{-- 休憩 --}}
         <div class="form__group-break-container">
@@ -55,13 +70,15 @@
                         <label class="entry__name">
                             {{ $index === 0 ? '休憩' : '休憩' . ($index + 1) }}
                         </label>
-                        <span>
+                        <div class="break-row">
+                        <span class="time-text">
                             {{ $break->requested_break_start ? \Carbon\Carbon::parse($break->requested_break_start)->format('H:i') : '' }}
                         </span>
                         〜
-                        <span>
+                        <span class="time-text">
                             {{ $break->requested_break_end ? \Carbon\Carbon::parse($break->requested_break_end)->format('H:i') : '' }}
                         </span>
+                        </div>
                     </div>
                 @endforeach
             @else
@@ -77,7 +94,7 @@
                             {{ $i === 0 ? '休憩' : '休憩' . ($i + 1) }}
                         </label>
                         <div class="break-row">
-                            <input name="breaks[{{ $i }}][start]" type="text" class="input"
+                            <input name="breaks[{{ $i }}][start]" type="text" class="time-input"
                                 value="{{ old(
                                     'breaks.' . $i . '.start',
                                     isset($attendance->breakTimes[$i]) && $attendance->breakTimes[$i]->break_start
@@ -85,7 +102,7 @@
                                         : '',
                                 ) }}">
                             〜
-                            <input name="breaks[{{ $i }}][end]" type="text" class="input"
+                            <input name="breaks[{{ $i }}][end]" type="text" class="time-input"
                                 value="{{ old(
                                     'breaks.' . $i . '.end',
                                     isset($attendance->breakTimes[$i]) && $attendance->breakTimes[$i]->break_end
@@ -109,13 +126,14 @@
                 <span> {{ $stampCorrectionRequest->reason }}
                 </span>
             @else
-                <input name="reason" id="reason" type="text" class="input" value="{{ old('reason') }}">
+                <textarea name="reason" id="reason" type="text" class="memo-input" value="{{ old('reason') }}"></textarea>
             @endif
             <div class="form__error">
                 @error('reason')
                     <p>{{ $message }}</p>
                 @enderror
             </div>
+        </div>
         </div>
 
         {{-- どの勤怠の修正なのか分かるようにattendance_idを取得するための記述 --}}

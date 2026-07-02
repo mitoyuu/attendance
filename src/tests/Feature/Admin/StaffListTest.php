@@ -194,13 +194,12 @@ class StaffListTest extends TestCase
 
         $response
             ->assertStatus(200);
-
         // 誰の勤怠か
         $response->assertSee('田中太郎');
-
         // どの日か
-        $response->assertSee('2026年6月10日');
-
+        $response
+            ->assertSee('2026年')
+            ->assertSee('6月10日');
         // その日の勤怠か
         $response->assertSee('09:00');
         $response->assertSee('18:00');

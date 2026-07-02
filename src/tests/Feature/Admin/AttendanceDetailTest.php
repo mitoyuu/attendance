@@ -64,25 +64,19 @@ class AttendanceDetailTest extends TestCase
 
         $response->assertStatus(200);
 
-        // file_put_contents(
-        //     storage_path('logs/test.html'),
-        //     $response->getContent()
-        // );
         // 表示確認
         // 名前
         $response->assertSee('山田太郎');
-
         // 日付（Blade表示形式）
-        $response->assertSee('2026年6月27日');
-
+        $response
+            ->assertSee('2026年')
+            ->assertSee('6月27日');
         // 出勤退勤
         $response->assertSee('09:00');
         $response->assertSee('18:00');
-
         // 休憩
         $response->assertSee('12:00');
         $response->assertSee('13:00');
-
         // 修正ボタン表示
         $response->assertSee('修正');
     }

@@ -22,8 +22,10 @@ class AttendanceRecordsTableSeeder extends Seeder
             'work_date' => Carbon::today(),
             'clock_in' => Carbon::parse('09:00'),
             'clock_out' => Carbon::parse('18:00'),
-            'break_total' => $breakTotal,
-            'work_total' => $workTotal,
+            // 'break_total' => $breakTotal,
+            // 'work_total' => $workTotal,
+            'break_total' => 3600,
+            'work_total' => 28800,
         ]);
 
         AttendanceRecord::create([

@@ -60,7 +60,9 @@ class AttendanceDetailTest extends TestCase
         $response->assertSee('山田太郎');
 
         // 日付
-        $response->assertSee('2026年6月25日');
+        $response
+            ->assertSee('2026年')
+            ->assertSee('6月25日');
 
         // 出勤
         $response->assertSee('value="09:00"', false);

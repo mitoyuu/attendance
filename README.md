@@ -68,7 +68,7 @@
 1. リポジトリのクローン
 Docker Desktopを起動した状態で、以下を実行します。
 ```bash
-git clone https://github.com/mitoyuu/attendance.git
+git clone git@github.com:mitoyuu/attendance.git
 cd attendance
 ```
 2. 初期セットアップ
