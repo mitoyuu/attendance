@@ -150,7 +150,6 @@
                 {{-- 存在しない場合：修正ボタンを表示 --}}
                 <button type="submit" class="btn-submit">修正</button>
             @endif
-
-        </form>
-        </div>
+    </form>
+</div>
 @endsection

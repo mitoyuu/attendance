@@ -14,17 +14,17 @@
     <form action="/admin/stamp_correction_request/approve/{{$request->id}}" method="post" class="attendance__detail">
     @endif
         @csrf
-        
+
         <!-- タイトル（左側に黒い縦線） -->
         <h1 class="page__title">勤怠詳細</h1>
-        
+
         <!-- 各項目を包む白いカード枠 -->
         <div class="form__card">
             <div class="form__group">
                 <label for="name" class="entry__name">名前</label>
                 <span class="entry__value">{{ $attendance->user->name }}</span>
             </div>
-            
+
             <div class="form__group">
                 <label for="work_date" class="entry__name">日付</label>
                 {{-- 表示用 --}}
@@ -32,7 +32,7 @@
                 {{-- 送信用（隠す） --}}
                 <input type="hidden" name="work_date" value="{{ \Carbon\Carbon::parse($attendance->work_date)->format('Y-m-d') }}">
             </div>
-            
+
             <div class="form__group">
                 <label for="requested_clock" class="entry__name">出勤・退勤</label>
                 <div class="entry__value">
@@ -47,7 +47,7 @@
                     @endif
                 </div>
             </div>
-            
+
             <div class="form__group-container">
                 @if($request)
                     @if($breakRequests->isEmpty())
@@ -90,7 +90,7 @@
                     </div>
                 @endif
             </div>
-            
+
             <div class="form__group no-border">
                 <label for="reason" class="entry__name">備考</label>
                 <span class="entry__value">
@@ -105,7 +105,7 @@
 
         <!-- どの勤怠の修正なのか分かるようにattendance_idを取得するための記述 -->
         <input type="hidden" name="attendance_id" value="{{ $attendance->id }}">
-        
+
         <!-- ボタンエリア -->
         <div class="button__container">
             @if($request && $request->request_status_id === 1)

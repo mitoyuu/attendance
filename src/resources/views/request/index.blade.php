@@ -28,15 +28,15 @@
                 <ul class="border__list">
                     {{-- tabが空、または 'pending' の時に is-active を付与 --}}
         <li>
-            <a href="?tab=pending" 
-               class="{{ in_array(request()->query('tab'), ['pending', '']) || is_null(request()->query('tab')) ? 'is-active' : '' }}">
+            <a href="?tab=pending"
+                class="{{ in_array(request()->query('tab'), ['pending', '']) || is_null(request()->query('tab')) ? 'is-active' : '' }}">
                 承認待ち
             </a>
         </li>
         {{-- tabが 'approved' の時に is-active を付与 --}}
         <li>
-            <a href="?tab=approved" 
-               class="{{ request()->query('tab') === 'approved' ? 'is-active' : '' }}">
+            <a href="?tab=approved"
+                class="{{ request()->query('tab') === 'approved' ? 'is-active' : '' }}">
                 承認済み
             </a>
         </li>
